@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhishScan - URL Threat Detector</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+
+  <div class="shell">
+
+    <header class="topbar">
+      <span class="topbar__logo">PHISH<span class="accent">SCAN</span></span>
+      <span class="topbar__version muted">v1.0.0</span>
+    </header>
+
+    <main class="main">
+
+      <section class="hero">
+        <p class="hero__label">THREAT ANALYSIS TERMINAL</p>
+        <h1 class="hero__title">URL Inspector</h1>
+        <p class="hero__sub">Paste any URL. The model scores it across 24 heuristic features in real time.</p>
+      </section>
+
+      <div class="scan-block">
+        <form id="scanForm" class="scan-form" autocomplete="off">
+          <label class="scan-form__label" for="urlInput">
+            <span class="prompt">&gt;</span> TARGET URL
+          </label>
+          <div class="scan-form__row">
+            <input
+              id="urlInput"
+              class="scan-form__input"
+              type="text"
+              name="url"
+              placeholder="https://example.com/path?query=value"
+              spellcheck="false"
+              required
+            />
+            <button class="scan-form__btn" type="submit" id="submitBtn">
+              <span class="btn-label">SCAN</span>
+              <span class="btn-spinner" aria-hidden="true"></span>
+            </button>
+          </div>
+          <p class="scan-form__hint muted">Supports HTTP, HTTPS, and raw domain inputs.</p>
+        </form>
+      </div>
+
+      <!-- Result card - hidden until response arrives -->
+      <div class="result-card" id="resultCard" aria-live="polite" hidden>
+
+        <div class="result-card__header" id="resultHeader">
+          <div class="verdict-badge" id="verdictBadge">
+            <span class="verdict-badge__icon" id="verdictIcon" aria-hidden="true"></span>
+            <span class="verdict-badge__label" id="verdictLabel">—</span>
+          </div>
+          <div class="confidence-block">
+            <span class="confidence-block__value" id="confidenceValue">—</span>
+            <span class="confidence-block__label muted">threat score</span>
+          </div>
+        </div>
+
+        <div class="result-card__url-row">
+          <span class="muted prompt">&gt;</span>
+          <span class="scanned-url" id="scannedUrl"></span>
+        </div>
+
+        <!-- Explainability panel -->
+        <div class="explain-panel">
+          <p class="explain-panel__heading">
+            <span class="accent">TRIGGERED FLAGS</span>
+            <span class="explain-panel__count muted" id="flagCount"></span>
+          </p>
+          <ul class="flag-list" id="flagList"></ul>
+        </div>
+
+        <div class="result-card__footer muted" id="resultTimestamp"></div>
+
+      </div>
+
+      <!-- Error state -->
+      <div class="error-card" id="errorCard" hidden>
+        <span class="error-card__icon" aria-hidden="true">⚠</span>
+        <p class="error-card__msg" id="errorMsg">Something went wrong.</p>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="disclaimer">
+        <p class="disclaimer__text">
+          <span class="accent">⚠</span> 
+          PhishScan is a machine learning tool and is not 100% accurate. 
+          Always verify suspicious URLs with additional tools such as 
+          <a href="https://www.virustotal.com" target="_blank" rel="noopener">VirusTotal</a> or 
+          <a href="https://phishtank.org" target="_blank" rel="noopener">PhishTank</a> 
+          before taking action.
+        </p>
+      </div>
+
+    </main>
+
+    <footer class="foot">
+      <span class="muted">PhishScan · MIT · model v2.1 · 24 features</span>
+    </footer>
+
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
