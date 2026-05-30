@@ -31,7 +31,6 @@ numpy==2.4.6
 packaging==26.2
 pandas==3.0.3
 parso==0.8.7
--e file:///E:/Sync/Machine%20Learning%20Personal%20Projects/phishing-url-detector
 pillow==12.2.0
 platformdirs==4.9.6
 plotly==6.7.0
