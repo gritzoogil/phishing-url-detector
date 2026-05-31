@@ -15,6 +15,9 @@
 
 ---
 
+## 🔗 Live Demo
+**[https://your-render-url.onrender.com](https://phishing-url-detector-jhyb.onrender.com/)**
+
 ## What is CaughtPhish?
 
 CaughtPhish is a web-based phishing URL detector that scores any URL across **22 heuristic features** in real time and returns a verdict `PHISHING` or `LEGITIMATE` along with a threat confidence score and a ranked list of flagged indicators.
@@ -330,7 +333,7 @@ Pull requests are welcome. To add a new heuristic feature:
 | Name | Email | Role |
 |---|---|---|
 | Gil Guillermo | [guillermoocinagil@gmail.com](mailto:guillermoocinagil@gmail.com) | Lead Developer |
-| Kent Ian Ramirez | [ramirezkentian0@gmail.com](mailto:ramirezkentian0@gmail.com) | Cybersecurity Aanlyst |
+| Kent Ian Ramirez | [ramirezkentian0@gmail.com](mailto:ramirezkentian0@gmail.com) | Cybersecurity Analyst |
 
 ---
 
